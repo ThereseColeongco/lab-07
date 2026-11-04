@@ -27,7 +27,7 @@ for test_dir in Testcase*/; do  # for every directory that starts with "Testcase
 
         if [ $exit_code -eq 1 ]; then
             has_diff=true
-            if [! -f "$diff_file" ]; then
+            if [ ! -f "$diff_file" ]; then
                 tc_failed=true
             else
                 live_diff=$(diff -u "$file1" "$file2" | tail -n +3)
@@ -65,7 +65,7 @@ for test_dir in Testcase*/; do  # for every directory that starts with "Testcase
     else
         echo "Testcase${tc_num}: PASS"
     fi
-    
+
 done
 
 exit $overall_status
