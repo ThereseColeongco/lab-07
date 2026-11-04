@@ -28,7 +28,7 @@ for test_dir in Testcase*/; do  # for every directory that starts with "Testcase
 
         if [ $exit_code -eq 1 ]; then
             mkdir -p "$diff_dir"  # with -p, if the directory already exists, it moves on without crashing or printing an error
-            echo "$diff_output" > "$diff_file"
+            # echo "$diff_output" > "$diff_file"
         fi
     done
 done
