@@ -2,6 +2,9 @@
 overall_status=0
 for test_dir in Testcase*/; do  # for every directory that starts with "Testcase"
 
+    # skip any folder that is an output diff directory
+    [[ "$test_dir" == *Diff* ]] && continue
+
     # get testcase folder number
     tc_num="${test_dir#Testcase}"  # strip "Testcase" prefix from test dir name
     tc_num="${tc_num%/}"  # strip / from test dir name
